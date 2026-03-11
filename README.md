@@ -30,7 +30,7 @@ SQL Server	Store performance data
 pyodbc	Python database connection
 Power BI	Data visualization dashboard
 🗂️ Project Architecture
-System Performance Monitor
+Power-BI-Analytics-Project
 │
 ├── cpu_performance.py      # Python script to collect system metrics
 ├── SQL Server Database
@@ -38,21 +38,22 @@ System Performance Monitor
 │
 └── Power BI Dashboard
        └── Real-time system monitoring visuals
+       
 🗄️ Database Schema
 
-Table: performance
+| Column           | Type          | Description                  |
+| ---------------- | ------------- | ---------------------------- |
+| Time             | datetime      | Timestamp of data collection |
+| cpu              | numeric(5,2)  | CPU usage percentage         |
+| memory           | numeric(5,2)  | Memory usage percentage      |
+| cpu-interruption | numeric(18,0) | CPU interrupts               |
+| cpu-calls        | numeric(18,0) | CPU calls                    |
+| memory_used      | numeric(18,0) | Used memory                  |
+| memory_free      | numeric(18,0) | Free memory                  |
+| bytes_send       | numeric(18,0) | Network bytes sent           |
+| bytes_received   | numeric(18,0) | Network bytes received       |
+| disk_usage       | numeric(5,2)  | Disk usage percentage        |
 
-Column	Type	Description
-Time	datetime	Timestamp of data collection
-cpu	numeric(5,2)	CPU usage percentage
-memory	numeric(5,2)	Memory usage percentage
-cpu-interruption	numeric(18,0)	CPU interrupts
-cpu-calls	numeric(18,0)	CPU calls
-memory_used	numeric(18,0)	Used memory
-memory_free	numeric(18,0)	Free memory
-bytes_send	numeric(18,0)	Network bytes sent
-bytes_received	numeric(18,0)	Network bytes received
-disk_usage	numeric(5,2)	Disk usage percentage
 🐍 Python Data Collector
 
 The Python script collects system performance metrics every 1 second and stores them in SQL Server.
@@ -98,6 +99,7 @@ Power BI Dashboard
       │
       ▼
 Real-Time Performance Visualization
+
 🚀 How to Run the Project
 1️⃣ Install Python Libraries
 pip install psutil
@@ -187,3 +189,4 @@ Cloud deployment
 Mohamed Abrar
 
 Project:Power-BI-Analytics-Project
+
